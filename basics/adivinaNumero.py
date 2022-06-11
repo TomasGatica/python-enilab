@@ -25,7 +25,7 @@ def pedir_numero():
         except: 
             pass 
         else: 
-            if 9 <= entrada <= 99: 
+            if 0 <= entrada <= 99: 
                 break 
     return entrada
 
