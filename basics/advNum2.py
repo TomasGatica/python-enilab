@@ -1,20 +1,6 @@
 # Programa por CLI que permite solicitar un número entre 0 - 99
 # para luego pedir al usuario que lo adivine.
-
-#import random
-#
-#numero = random.randint(0, 100)
-#primera parte original 1.1
-#print("Introduzca el número a adivinar")
-#while True:
-#    numero = input("Introduzca un número entre 0 y 99: ")
-#    try:
-#        numero = int(numero) 
-#    except:
-#        pass
-#    else:
-#        if 0 <= numero <= 99:
-#            break
+import sys
 
 
 # FUNCIONES
@@ -29,17 +15,15 @@ def pedir_numero(invitacion, minimo=MIN, maximo=MAX):
         try: 
             entrada = int(entrada) 
         except: 
-            pass 
+            print("Solo estan autorizados los caracteres [0-9] ",
+                file=sys.stderr) 
         else: 
-            if minimo <= entrada <= maximo: 
-                break 
-    return entrada
+            return entrada
 
 #primera parte 
 numero = pedir_numero("Introduzca el número a adivinar ")
         
 #segunda parte
-print("Intente adivinar el número ") 
 while True:  # BUCLE 1
     intento = pedir_numero(
         "Adivine el número ", 
