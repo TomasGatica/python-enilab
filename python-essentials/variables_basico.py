@@ -35,3 +35,25 @@ kilometros_a_millas = kilometros / 1.61
 
 print(millas, "millas son", round(millas_a_kilometros, 2), "Kilómetros")
 print(kilometros, "kilómetros son", round(kilometros_a_millas, 2), "Millas")
+
+
+#   Tipos de datos, variables y operaciones básicas IO
+
+#   las palabras clave van al final
+print("La witsi witsi araña", "subió", end=" ", sep="-")
+print("La witsi witsi araña", "subió", end=" ")
+
+print("Mi","nombre", "es", sep="_", end="*\n")
+print("\"I'm\"\n\"\"learning\"\"\n\"\"\"Python\"\"\"")  #   Comillas en Output.
+
+
+#   print(sep="&", "fish", "chips") SyntaxError: positional arg keyword
+
+variable_caracter = 'Variable en comilla simple'
+VARIABLE_STRING = "Variable en comilla doble"
+
+#   Tipos de datos 
+entero = 100    #   integer
+coma_flotante = 0.1 #   float
+complejos = 1j  #   complejos
+print(entero, coma_flotante, complejos)

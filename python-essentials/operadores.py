@@ -71,3 +71,24 @@ print(2 * 3 % 5)    #   * y % tienen la misma prioridad
                     #   $ 1
 #
 #   Las sub-expresiones dentro de los paréntesis siempre se calculan primero
+
+#   Operador de igualdad.
+#   Enlazado del lado izquierdo
+#   == Compara los valores de dos operandos.
+#   Si son iguales True, en caso contrario False
+var = 0
+print(var == 0) #   $True
+
+#   Operador de desigualdad o "no es igual a..."
+#   !=
+#   Compara los valores de dos operandos.
+#   Si son iguales False, caso contrario True.
+var_2 = 0
+print(var_2 != 0)   #   $False
+
+#   Operadores de comparación menor o mayor (estricto) que.
+#   Operadores binarios con enlazado del lado izquierdo
+#   Programa que toma un parámetro n como input, si es menor que 100
+#   Imprime False si n es menor que 100 y True si es mayor o igual que 100
+n = int(input("Ingresa un número: "))
+print(n >= 100)
