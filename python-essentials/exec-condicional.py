@@ -123,6 +123,7 @@ for letra in palabra_ingresada:
     
     #
 #   Hipotesis de Collatz
+#   Conjetura de Collatz, conocida como conj 3n+1
 #   1. Toma cualquier numero entero que no sea negativo y no sea 0
 #   asignandole el nombre de c0.
 #   2. Si es par evalúa de nuevo c0 como c0 / 2
