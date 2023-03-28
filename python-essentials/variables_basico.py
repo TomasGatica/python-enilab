@@ -12,7 +12,7 @@ adam=6
 print(john, mary, adam, sep=',')
 total_apples=john+mary+adam
 print("El total de manzanas es: "+str(total_apples))
-#   str función toString al concatenar
+#   str función toString al concatenar un integer
 print("El total de manzanas es:",total_apples)
 #   , pasarle otra variable a print
 #
