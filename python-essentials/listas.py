@@ -106,5 +106,59 @@ print(lst)
 #
 lst = []
 del lst
-print(lst)
+# print(lst)
 #   NameError: name lst is not defined
+
+#   Sin embargo recordar que Python como todo lenguaje
+#   tiene built-in functions para ayudarnos a realizar estas tareas
+my_list2 = [8, 10, 6, 2, 4]
+my_list2.sort()
+print(my_list2)
+my_list2.reverse()
+print(my_list2)
+
+#   Algo que distingue las listas de las variables ordinarias:
+list_1 = [1] # indx 0 = 1
+list_2 = list_1 # copia memory location de la list_1
+list_1[0] = 2 # cambiamos el elemento
+print(list_2) # $ [2] 
+# 
+#   El nombre de una variable ordinaria es el nombre de su contenido
+#   El nombre de una lista es el nombre de una ubicación de memoria
+#   DONDE SE ALMACENA LA LISTA.
+#   Por lo tanto, la asignación list_1 = list_2 copia el nombre 
+#   del arreglo, no su contenido. Ambas listas identifican la misma 
+#   ubicación en memoria, modificar uno afecta al otro
+#
+#   Para solucionar este problema podemos usar las Slices/Rebanadas o rodajas
+#
+#   my_list[inicio:fin] NOTA: inicio se considera, pero fin no, por lo que se dice fin-1
+#   esto nos permite crear una lista de destino con el contenido
+#   copiado
+#   Copiando la lista completa.
+list_1 = [1]
+list_2 = list_1[:] # aqui rebanamos incluyendo todo en la nueva lista
+list_1[0] = 2 # vemos que no produce efecto
+print(list_2)
+
+# Copiando parte de la lista.
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[1:3] # el 3er elemento es 4 pero este no se considera / fin-1
+print(new_list)
+#   Dejar el inicio vacio toma desde el indx 0 my_list[:end]
+#   lo mismo a la inversa my_list[start:]
+#
+#   Los indices negativos
+my_list = [10, 8, 6, 4, 2]
+new_list = my_list[1:-1]
+print(new_list)
+#   La función del() también nos permite eliminar por rebanadas
+del my_list[1:3] # OJO que esto no produce una salida nueva.
+#   del my_list[:] delete all elements
+
+my_list = [10, 8, 6, 4, 2]
+del my_list
+# print(my_list)
+#   Elimina la lista, NO SU CONTENIDO
+#   uncomm print de arriba
+#   $ NameError: name my_list is not defined
