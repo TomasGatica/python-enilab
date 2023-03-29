@@ -160,3 +160,77 @@ for digit in "0165031806510":
         print("x", end="")
         continue
     print(digit, end="")
+    
+
+#
+#
+#   Bucle while simple
+counter = 5
+while counter:
+    print("Dentro del bucle. ")
+    counter -=1
+print("Fuera del bucle. ", counter)
+#
+#   En un bucle while, existe la posibilidad
+#   de usar un bloque else. Pero ojo, el else se ejecuta
+#   independiente de si el while entra o no en su cuerpo
+#   un ejemplo:
+i = 1
+while i < 5:
+    print(i)
+    i += 1
+else:
+    print("else:", i) # $ 1,2,3,4 else: 5
+#
+#
+#   Para los bucles for la cosa cambia un poco.
+#   primero siempre se conserva el ultimo valor de la variable
+#   y segundo el for si evalua y pasa al else en caso de for False
+i = 111
+for i in range(2, 1): # invalid range values
+    print(i)
+else:
+    print("else:", i) # Aun asi for queda en false y pasa el else
+#
+# Ejemplo 1
+word = "Python"
+for letter in word:
+    print(letter, end="*")
+
+# Ejemplo 2
+for i in range(1, 10):
+    if i % 2 == 0:
+        print(i)
+# Ejemplo 3        
+text = "OpenEDG Python Institute"
+for letter in text:
+    if letter == "P":
+        break
+    print(letter, end="")
+
+# Ejemplo 4 
+text = "pyxpyxpyx"
+for letter in text:
+    if letter == "x":
+        continue
+    print(letter, end="")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
