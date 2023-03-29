@@ -108,15 +108,3 @@ lst = []
 del lst
 print(lst)
 #   NameError: name lst is not defined
-
-
-
-
-
-
-
-
-
-
-
-
