@@ -162,3 +162,29 @@ del my_list
 #   Elimina la lista, NO SU CONTENIDO
 #   uncomm print de arriba
 #   $ NameError: name my_list is not defined
+
+# Operadores in y not in 
+#
+#   Capaces de verificar si un valor específico está almacenado
+#   dentro de la lista o no. 
+#   in verifica si un elemento está almacenado en algun lado de la lista
+#   devuelve True si es el caso.
+#   not in por el contrario compruena si no está en la lista, devuelve
+#   True si es el caso.
+
+my_list = [0, 3, 12, 8, 2]
+
+print(5 in my_list)
+print(5 not in my_list)
+print(12 in my_list)
+
+
+#   Algunos programas con listas
+my_list = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = my_list[0]
+
+for i in range(1, len(my_list)):
+    if my_list[i] > largest:
+        largest = my_list[i]
+
+print(largest)
