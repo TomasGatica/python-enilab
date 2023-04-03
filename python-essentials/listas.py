@@ -188,3 +188,34 @@ for i in range(1, len(my_list)):
         largest = my_list[i]
 
 print(largest)
+
+#   Encontrando la ubicacion de un elemento dentro de una lista
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+to_find = 5
+found = False
+
+for i in range(len(my_list)):
+    found = my_list[i] == to_find
+    if found:
+        break
+if found:
+    print("Elemento encontrado en el índice: ", i)
+else:
+    print("No encontramos nada")
+    
+#   Loteríaaaaa. Imagina que elijes tus números de la suerte
+#   los almacenaremos en una lista.
+#   En otra lista tendremos los números ganadores.
+#   Y tendremos una variable del tipo contador para verificar
+#   las veces que le "achuntamos al número"
+#   mis_numeros = [5, 11, 9, 42, 3, 49]
+mis_numeros = [3, 7, 11, 42, 34, 49]
+numeros_ganadores = [3, 7, 11, 42, 34, 49]
+hits = 0 # cuantas veces "le pegamos" al correcto
+for numero in numeros_ganadores:
+    if numero in mis_numeros:
+        hits += 1
+if hits == len(numeros_ganadores):
+    print("Acertaste todos los números!")
+else:
+    print("Acertaste ",hits," números")
