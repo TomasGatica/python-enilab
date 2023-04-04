@@ -219,3 +219,111 @@ if hits == len(numeros_ganadores):
     print("Acertaste todos los números!")
 else:
     print("Acertaste ",hits," números")
+    
+#   Ejercicio:
+#   Dada una lista con números, eliminar uno de los repetidos si hubiera.
+#
+my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9] 
+lista_limpia = []
+
+for numero in my_list:
+    if numero not in lista_limpia:
+        lista_limpia.append(numero)
+        print("Este número no está, añadido a la lista limpia")
+    else:
+        print("Este número ya estaba, no lo añadimos")
+my_list = lista_limpia[:]
+print("La lista con elementos únicos:")
+print(my_list)
+
+#
+#
+#   Observemos el siguiente código
+row = []
+for i in range(8):
+    row.append("WHITE_PAWN")
+#
+row = ["WHITE_PAWN" for i in range(8)]
+#   Lo que hemos hecho aquí se llama comprensión de listas.
+#   Se utiliza para llenar una lista sobre la marcha.
+squares = [x ** 2 for x in range(10)]
+#   Por ejemplo aquí creamos una lista de 10 elementos, en
+#   donde los llenamos con cuadrados de 10 números enteros
+#   comenzando desde 0
+odds = [x for x in squares if x % 2 != 0 ]
+#   Creamos una lista de impares solo con los números de la lista squares
+
+#   Por ejemplo si queremos hacer la matriz de un tablero de ajedrez
+tablero = [["VACIO" for i in range(8)] for j in range(8)]
+#   [0][0] al [7][7]
+tablero[0][0] = "TORRE"
+tablero[0][7] = "TORRE"
+tablero[7][0] = "TORRE"
+tablero[7][7] = "TORRE"
+tablero[4][2] = "CABALLERO"
+tablero[3][4] = "PEON"
+#
+#
+#   Ejemplo. Listas bidimensionales
+#   
+#   Necesitas hacer una pieza de software para una estación
+#   meteorológica automática. El dispositivo registra la temperatura
+#   del aire cada hora y lo hace durante todo el mes.
+#   24 * 31 = 744 muestras
+#   Primero determinamos usar floats por la precesión de medición en 
+#   temperatura de 0.1°C.
+#   Suponiendo que cada mes tiene 31 días, decidimos usar 
+#   el registro en filas.
+temps = [[0.0 for h in range(24)] for d in range(31)]
+#   Llenamos la matriz de 0.0s 
+#   Ahora toca llenar la matriz con las mediciones del dispositivo
+#   Aqui llenamos la matriz
+
+total = 0.0
+for dia in temps:
+    total += dia[11]
+promedio = total / 31
+print("Temperatura promedio al mediodía: ", promedio)
+mas_alto = -100.0
+for dia in temps:
+    for temp in dia:
+        if temp > mas_alto:
+            mas_alto = temp
+print("La temperatura más alta fue", mas_alto)
+#
+#
+#   Imaginemos un hotel enorme de 3 edificios con 15 pisos 
+#   cada uno y con 20 habitaciones por piso.
+rooms = [[[False for r in range(20)] for f in range(15)]
+         for t in range(3)]
+
+vacante = 0
+for room_number in range(20):
+    if not rooms[2][14][room_number]:
+        vacante += 1
+
+i = 0
+while i <= 5 :
+    i += 1
+    if i % 2 == 0:
+        break
+    print("*")
+
+
+for i in range(1):
+    print("#")
+else:
+    print("#")
+print("a")
+
+var = 0
+while var < 6:
+    var += 1
+    if var % 2 == 0:
+        continue
+    print("#")
+
+
+
+
+
