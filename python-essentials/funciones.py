@@ -42,7 +42,39 @@ def hola():
 #   Funciones PARAMETRIZADAS.
 
 # def message(number):
-#     print("kajsdjfh", number)
+#     print("mensaje", number)
 # message()
 #   Nos arrojará una excepción de TypeError ya que no encuentra el 
 #   arg posicional. 
+#
+#   Los parámetros solo existen dentro de las funciones donde han sido 
+#   definidos def func(param):
+#   La asignación de un valor a un parámetro de una función se hace
+#   en el momento que la func es llamada o invocada.
+#   Por lo tanto, los argumentos existen fuera de las funciones, y 
+#   son los que pasan los valores a los parámetros.
+#
+def mensaje(numero):
+    print("Ingresa un número: ", numero)
+mensaje(1)
+# $ Ingresa un numero: 1
+#  
+#   Tambien es posible tener una variable con el mismo nombre de un parámetro.
+numero = 123
+mensaje(321)
+print(numero)
+# $ "Ingresa un numero: 321"
+# $ 123
+#   Como podemos observar la variable numero tiene un valor y el paramtro otro distinto
+#   A esto se le denomina sombreado/shadowing
+#
+def funcion_param(que, algo):
+    print("Ingresa", que, algo)
+funcion_param("la cuenta", 1)
+funcion_param("el rut", 891728)
+funcion_param("la cosa", "rara")
+#
+#
+#   El paso de paramtros sucede de dos maneras.
+#   * Posicional (Positional)
+#   * Palabra clave (Keywords)
