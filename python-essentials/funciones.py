@@ -78,3 +78,81 @@ funcion_param("la cosa", "rara")
 #   El paso de paramtros sucede de dos maneras.
 #   * Posicional (Positional)
 #   * Palabra clave (Keywords)
+#
+#   Cuando asignamos argumentos al parámetro correspondiente
+#   le llamamos paso de parámetros posicionales.
+def my_function_pos(a, b, c):
+    print(a, b, c)
+    print(c, b, a)
+    #   los argumentos siguen el orden en que fueron
+    #   definidos dentro de la función ()
+my_function_pos(1,2,3)
+
+#   Paso de argumentos de plabra clave
+#   El significado del argumento está definido por su nombre
+#   y no por su posición.
+def nombre_apellido(nombre1, apellido1):
+    print("Hola, mi nombre es: ", nombre1, apellido1)
+
+nombre_apellido(nombre1="Tomás", apellido1="Gatica")
+nombre_apellido(apellido1="Hernández", nombre1="Belén")
+#   Observamos que la posición no es relevante
+#   Si introducimos un nombre de parámetro que no existe
+#   Python arrojará un TypeError got an unexpected 
+#   keyword argument
+#
+#   Para mezclar args posicionales y de keywords
+#   hay UNA SOLA REGLA INQUEBTRANTABLE:
+#   Primero los args POSICIONALES y luego los KEYWORDS.
+def func_suma(x,y,z):
+    print("Sumamos ",x,y,z,"y su resultado es",x+y+z)
+
+func_suma(1,2,3)
+func_suma(z=3,y=2,x=1)
+#   AHORA MEZCLAMOS
+func_suma(3,z=1,y=2)
+#   3 es pasado al pos x y los dos siguientes pueden 
+#   ser puestos "desordenados", lo importante es respetar
+#   el orden
+#   func_suma(3,z=1,x=2)
+#   $ TypeError multiple values for argument x 
+#   OJO AL CASO DE KEY--POS = SyntaxError
+#   POSITIONAL(orden) -- KEYWORD (desonrdando)
+#
+#   Ahora, podemos definir un parámetro con un argumento
+#   default. Osea con un valor predefinido.
+def nombre_apellido2(nombre1, apellido1="González"):
+    print("Mi nombre es", nombre1, apellido1)
+
+nombre_apellido2("Pedro", "Urdemales")
+#   Si le pasamos un argumento se sobre escribe
+nombre_apellido2("Jorge")
+#   El apellido será el definido default de la func()
+nombre_apellido2(nombre1="SlimShady")
+
+def hi_my_name_is(nombre2="Slim", apellido2="Shady"):
+    print("Hi my name is", nombre2, apellido2)
+
+hi_my_name_is()
+#   $ Hi my name is Slim Shady
+print("Grande EMINEM")
+
+#
+def direccion(calle, ciudad, cod_postal):
+    print("La dirección es calle", calle, "en la ciudad de", 
+          ciudad, "con código postal", cod_postal)
+
+street = input("Calle: ")
+city = input("Ciudad: ")
+postal_code = input("Código postal: ")
+
+direccion(street,city,postal_code)
+
+#   Si por algún motivo colocamos primero un arg KEYWORD
+#   y luego uno POSICIONAL el error es de tipo SyntaxError
+
+#   def sad(a,b=2,c):
+#       print(a+b+c)
+#   sad(a=1, c=3)
+#   En este ejemplo estamos rompiendo la regla en la 
+#   definción de la funcion el orden de los params pos-key
