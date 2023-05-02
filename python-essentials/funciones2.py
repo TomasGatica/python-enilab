@@ -56,3 +56,91 @@ def funcion_rara(num):
         return True
 print(funcion_rara(2)) # $ True
 print(funcion_rara(1)) # $ None
+#
+#
+#   Listas y funciones
+#   Podemos enviar listas como argumentos, y en general, cualquier
+#   entidad reconocible por Python puede tomar el papel 
+#   de un arg de func. Pero hay que serciorarse de que la func
+#   sea capaz de hacer uso de él.
+def sumar_items_lista(lista):
+    
+    acumulador = 0
+    
+    for item in lista:
+        acumulador += item
+        
+    return acumulador
+
+print(sumar_items_lista([5, 4, 3]))
+#   Una manera riesgosa a tener en cuenta es cuanto solo le pasamos
+#   un argumento literal.
+#   print(sumar_items_lista(5)) nos arrojará un TypeError
+#   debido a que el objeto 'int' no es iterable.
+#
+#
+#   También podemos devolver una lista como 
+#   resultado de una función, al igual que otras entidades
+#   válidas.
+
+def agregar_num_lista(n):
+    
+    lista_numeros = []
+    
+    for i in range(0, n):
+        lista_numeros.insert(0, i)
+    
+    return lista_numeros
+
+print(agregar_num_lista(10))    # $ [9, 8, 7, ..., 0]
+
+#
+#
+#   Lab: Cuantos días. Escribir una funcion que toma dos args
+#   un año y mes, y devuelve el número de días del 
+#   mes/año dado (mientras que solo febrero es sensible al 
+#   valor del año).
+
+def es_bisiesto(year):
+    if year % 4 != 0:
+        return False
+    elif year % 100 != 0:
+        return True
+    elif year % 400 != 0:
+        return False
+    else:
+        return True
+    
+def dias_en_mes(year,month):
+    if year < 1582 or month < 1 or month > 12:
+        return None
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    respuesta = days[month - 1]
+    if month == 2 and es_bisiesto(year):
+        respuesta = 29
+    return respuesta
+
+test_years = [1900, 2000, 2016, 1987]
+test_months = [2, 2, 1, 11]
+test_results = [28, 29, 31, 30]
+for i in range(len(test_years)):
+    yr = test_years[i]
+    mo = test_months[i]
+    print("Year ", yr, "month ", mo, "-> ", end="")
+    result = dias_en_mes(yr, mo)
+    if result == test_results[i]:
+        print("OK")
+    else:
+        print("Fallido")
+        
+#   Encontrando números primos.
+def es_primo(num1):
+    for i in range(2, int(1 + num1 ** 0.5)):
+        if num1 % i == 0:
+            return False
+    return True
+    
+for i in range(1, 20):
+    if es_primo(i + 1):
+        print(i + 1, end=" ")
+print()
