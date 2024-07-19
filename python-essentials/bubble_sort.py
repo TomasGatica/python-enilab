@@ -7,7 +7,7 @@
 #   Ejemplo en el diagrama bubble_sort.drawio
 
 #   Primera vista
-mi_lista = [8, 10, 6, 2, 4] # Lista a ordenar
+mi_lista = [8, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 48, 10, 6, 2, 4] # Lista a ordenar
 print(len(mi_lista))
 for i in range(len(mi_lista) - 1): # largo de la lista - 1
     #   Esto es porque el ultimo elemento no tiene otro adyacente para comparar

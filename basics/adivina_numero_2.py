@@ -2,8 +2,6 @@
 # para luego pedir al usuario que lo adivine.
 import sys
 
-
-# FUNCIONES
 MIN = 0
 MAX = 99
 minimo = MIN
@@ -13,24 +11,24 @@ def pedir_numero(invitacion, minimo=MIN, maximo=MAX):
     while True:
         entrada = input(invitacion)
         try: 
-            entrada = int(entrada) 
-        except: 
+            entrada = int(entrada)
+        except:
             print("Solo estan autorizados los caracteres [0-9] ",
-                file=sys.stderr) 
-        else: 
+                file=sys.stderr)
+        else:
             return entrada
 
 #primera parte 
 numero = pedir_numero("Introduzca el número a adivinar ")
-        
+
 #segunda parte
 while True:  # BUCLE 1
     intento = pedir_numero(
-        "Adivine el número ", 
-        minimo, 
+        "Adivine el número ",
+        minimo,
         maximo,
-    ) 
-    if intento < numero: 
+    )
+    if intento < numero:
         print("Demasiado pequeño")
         minimo = intento + 1 
     elif intento > numero: 

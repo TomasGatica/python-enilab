@@ -57,5 +57,5 @@ def ejecutarOpcion(opcion):
             listar_alumnos()
         except:
             print("Ocurrió un error...")
-
+# Invocación del método
 menu_principal()
