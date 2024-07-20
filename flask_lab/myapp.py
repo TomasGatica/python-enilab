@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from forms import LoginForm
 from flask_sqlalchemy import SQLAlchemy
+from models import User
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'debugdatabase1234'
@@ -8,6 +9,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///example.db'
 #   to complete the initialization we create an object od the SQLAlchemy class
 #   we provide our application as a parameter to its constructor
 db = SQLAlchemy(app)
+
+db.create_all()
 
 @app.route("/")
 def home():
